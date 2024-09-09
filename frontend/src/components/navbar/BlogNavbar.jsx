@@ -1,15 +1,34 @@
 import React from "react";
 import { Button, Container, Navbar } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import "./styles.css";
+import { AuthorContext } from "../../context/AuthorContextProvider";
+import { useContext, useState } from "react";
+
+
 const NavBar = props => {
+
+  const { token, setToken } = useContext(AuthorContext)
+  const navigate = useNavigate()
+
+
+
+  const handleLogout = () => {
+    setToken(null)
+    localStorage.removeItem('token')
+    navigate('/')
+  }
+
   return (
     <Navbar expand="lg" className="blog-navbar" fixed="top">
       <Container className="justify-content-between">
         <Navbar.Brand as={Link} to="/">
           <img className="blog-navbar-brand" alt="logo" src={logo} />
         </Navbar.Brand>
+        { token && <Button className="ms-2 me-2" variant="primary" onClick={handleLogout}>
+          Logout
+        </Button>}
 
         <Button as={Link} to="/new" className="blog-navbar-add-button bg-dark" size="lg">
           <svg
