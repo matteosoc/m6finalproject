@@ -1,0 +1,24 @@
+GET  http://localhost:4000/blogPosts/66c8cef25de71b0b402d6c59/comments
+
+###
+GET  http://localhost:4000/blogPosts/66c8cef25de71b0b402d6c59/comments/66ced0675c80ef72f6494b18
+
+###
+POST http://localhost:4000/blogPosts/66c8cef25de71b0b402d6c59/
+Content-Type: application/json
+
+{
+    "content": "primo commento"
+}
+
+###
+PUT http://localhost:4000/blogPosts/66c8cef25de71b0b402d6c59/comments/66ced0675c80ef72f6494b18
+Content-Type: application/json
+
+{
+    "content": "commento modificato"
+}
+
+###
+DELETE http://localhost:4000/blogPosts/66c8cef25de71b0b402d6c59/comments/66ced0675c80ef72f6494b18
+Content-Type: application/json

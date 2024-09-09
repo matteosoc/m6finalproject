@@ -1,0 +1,28 @@
+GET  http://localhost:4000/authors/
+
+###
+GET http://localhost:4000/authors/66cc8cc2a00a781899a395c3
+
+###
+POST http://localhost:4000/authors
+Content-Type: application/json
+
+{
+    "nome": "ciccio",
+    "cognome": "pasticcio",
+    "email": "email@prova.ut",
+    "data": "1967-11-09",
+    "avatar": "ciccio.jpg"
+}
+
+###
+PUT http://localhost:4000/authors/66b4fcd7d615eb3ac5e628a0
+Content-Type: application/json
+
+{
+    "nome": "Marso"
+}
+
+
+###
+DELETE http://localhost:3000/authors/66b61252aa100fc0e225563f

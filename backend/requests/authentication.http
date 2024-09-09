@@ -1,0 +1,17 @@
+@host=http://localhost:4000
+@jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JJZCI6IjY2ZGM2NTQ1ZDMxNmE2M2RhMGNmY2JlNyIsImlhdCI6MTcyNTcyMTQ2NCwiZXhwIjoxNzI1NzI1MDY0fQ.ql2fQmPTSLcWSadJosdD3fIwpaEpeijabd9bmAZKJac
+
+
+###
+POST {{host}}/login
+Content-Type: application/json
+
+{
+    "email": "ehi@ehi.ehi",
+    "password": "ehi"
+}
+
+###
+GET {{host}}/me
+Authorization: Bearer {{jwt}}
+Content-Type: application/json

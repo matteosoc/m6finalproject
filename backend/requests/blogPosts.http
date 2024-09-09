@@ -1,0 +1,33 @@
+GET  http://localhost:4000/blogPosts
+
+###
+GET http://localhost:4000/blogPosts/66c8c7b57b2c8e08afa61732/
+
+###
+POST http://localhost:4000/blogPosts
+Content-Type: application/json
+
+{
+    "category": "catagoria1",
+    "title": "a",
+    "cover": "daje.jpg",
+    "readTime": {
+        "value" : 50,
+        "unit": "min"
+    },
+    "author": "66b6110ba9788077ee2487d4",
+    "content": "<p>aaaaaaaaaaa</p>"
+}
+
+
+###
+PUT http://localhost:4000/blogPosts/66c8c7b57b2c8e08afa61732
+Content-Type: application/json
+
+{
+    "title": "titolo modificato"
+}
+
+
+###
+DELETE http://localhost:4000/blogPosts/66b61252aa100fc0e225563f
